@@ -1,4 +1,3 @@
-// import styles from './Intro.module.css';
 import React from 'react'
 
 const Intro = () => {
@@ -8,7 +7,7 @@ const Intro = () => {
 
       <div className="flex flex-wrap justify-evenly">
         
-          <div className="m-[2%] w-[95%] min-w-90 bg-gradient-to-r from-purple-100 via-blue-100 to-green-100 h-70 rounded-2xl flex flex-col flex-wrap justify-evenly 
+          <div className="m-[2%] w-[95%] min-w-70 bg-gradient-to-r from-purple-100 via-blue-100 to-green-100 h-70 rounded-2xl flex flex-col flex-wrap justify-evenly 
                           shadow-lg border-2 border-black
                           hover:scale-[(1.03)] hover:shadow-[0px_10px_24px_rgba(142,68,173,0.4)] hover:border-[#9b59b6]
                           max-[1024px]:w-[95%] max-[1024px]:h-auto max-[1024px]:flex max-[1024px]:flex-row max-[1024px]:justify-around max-[1024px]:items-center
@@ -28,18 +27,18 @@ const Intro = () => {
                 <h1 className="text-4xl text-black w-[70%]
                               max-[1024px]:text-4xl max-[1024px]:text-center
                               max-[768px]:text-3xl max-[768px]:text-center
-                              max-[480px]:text-2xl max-[480px]:text-center
-                              max-[280px]:text-xl max-[280px]:text-center"> <strong>Dr.Saurabh kumar Sharma</strong></h1>
+                              max-[480px]:text-2xl max-[480px]:text-left
+                              max-[280px]:text-xl max-[280px]:text-left"> <strong>Dr.Saurabh kumar Sharma</strong></h1>
                 <h2 className="text-3xl text-black mb-2 w-[70%]
                                max-[1024px]:text-3xl max-[1024px]:text-center
                                max-[768px]:text-2xl max-[768px]:text-center
-                               max-[480px]:text-2xl max-[480px]:text-center
-                               max-[280px]:text-base max-[280px]:text-center">Assistant Professor</h2>
+                               max-[480px]:text-2xl max-[480px]:text-left
+                               max-[280px]:text-base max-[280px]:text-left">Assistant Professor</h2>
                 <p className="text-base text-gray-800 mb-3 mx-2 w-[70%]
                                max-[1024px]:text-2xl max-[1024px]:text-center max-[1024px]:w-[95%]
                                max-[768px]:text-xl max-[768px]:text-center 
-                               max-[480px]:text-base max-[480px]:text-center
-                               max-[280px]:text-sm max-[280px]:text-center">School of Computer & Systems Sciences
+                               max-[480px]:text-base max-[480px]:text-left
+                               max-[280px]:text-sm max-[280px]:text-left">School of Computer & Systems Sciences
                                 Jawaharlal Nehru University, New Delhi, INDIA
                                 Ph.D. (Computational Neuroscience), Jawaharlal Nehru University, New Delhi, 2019.
                                 M.Tech. (Computational & Systems Biology), Jawaharlal Nehru University, New Delhi, 2014.
@@ -48,35 +47,22 @@ const Intro = () => {
               </div>
      
         </div>
-         
+         <div className='mx-2'> 
+    <p className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-black rounded-2xl py-5 px-6 my-8 mx-auto max-w-300 font-sans text-base leading-6 text-gray-900 shadow-[0px 4px 12px rgba(142, 68, 173, 0.2)] transition-transform duration-300 ease-in-out
+                    hover:scale-105 hover:shadow-lg hover:border-blue-300">
+        <strong className='inline-block text-black text-base font-bold py-1.5 px-3 rounded-[6px 6px 6px 0] mb-3'>Bio-computational Lab</strong> is an interdisciplinary research hub at Jawaharlal Nehru University (JNU) 
+        led by Dr. Saurabh Kumar Sharma. The lab is dedicated to exploring the frontiers of Machine Learning (ML)
+        and Artificial Intelligence (AI) in understanding complex biological and neurological systems.
+        By integrating computational modeling, neural networks, and data-driven approaches, the lab focuses on decoding
+        brain functions, neural communication, and systems biology. With a strong emphasis on mathematical modeling,
+        network theory, and big data analytics, the lab aims to bridge the gap between biology and computation.
+        Research at the Bio-computational Lab supports the development of predictive tools and intelligent systems 
+        for solving real-world biological challenges, fostering innovation in computational biology, neuroscience, and AI-driven diagnostics.
+      </p>
+      </div>
     </div>
+    
   )
 }
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      {/* <div className=''>
-        <img src="Dr.Saurabh kumar.png" alt="dr." className=" w-full items-center object-cover rounded-2xl flex justify-center max-[768px]:max-w-[90%] max-[768px]:mx-auto" />
-      </div>
-      <div className="flex  ml-6 max-w-200">
-        <h1 className="font-sans text-4xl text-green-600 max-[768px]:text-3xl">Dr. SAURABH KUMAR SHARMA  </h1>
-        <h2 className="font-sans text-3xl text-green-600 max-[768px]:text-2xl">ASSISTANT PROFESSOR</h2>
-        <p className="text-base leading-6 mt-4 font-light text-gray-700 max-[768px]:text-base"><strong>School of Computer & Systems Sciences
-          Jawaharlal Nehru University, New Delhi, INDIA
-          Ph.D. (Computational Neuroscience), Jawaharlal Nehru University, New Delhi, 2019.
-          M.Tech. (Computational & Systems Biology), Jawaharlal Nehru University, New Delhi, 2014.
-          B.Tech. (Computer Science and Engineering), Lovely Professional University, Punjab, 2012.</strong></p>
-      </div> */}
-        
- 
+    
 export default Intro;

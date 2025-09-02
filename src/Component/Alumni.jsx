@@ -1,5 +1,5 @@
 import React from 'react'
-// import styles from './Alumni.module.css';
+import { useNavigate } from "react-router-dom";
 
 
 const data = [
@@ -58,6 +58,7 @@ const data = [
 
 
 function Alumni() {
+  const navigate = useNavigate();
   return (
     <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-full h-auto mt-16 pt-8">
       <h1 className="text-center mb-4 text-green-800 font-bold text-5xl"> Alumnis</h1>

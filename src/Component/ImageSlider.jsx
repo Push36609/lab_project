@@ -33,7 +33,7 @@ function ImageSlider() {
   }, [])
 
   return (
-    <div className="w-full mt-16 bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 flex flex-col items-center z-1 pt-5" onMouseEnter={() => clearInterval(ref.current)}
+    <div className="w-full bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 flex flex-col items-center z-1 pt-5" onMouseEnter={() => clearInterval(ref.current)}
       onMouseLeave={() => ref.current = setInterval(handleNext, 2000)}>
 
       <div className="relative inline-block w-full z-1 ">

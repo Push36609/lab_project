@@ -11,6 +11,8 @@ import Interns from "./Component/Interns";
 import CurrentMember from "./Component/CurrentMember";
 import Alumni from "./Component/Alumni";
 import Login from "./Component/Login";
+import About from "./Component/About";
+import CurrentmemberSlider from "./Component/CurrentmemberSlider";
 
 
 
@@ -29,7 +31,7 @@ const Layout = () => {
 const MemberLayout = () => {
   return (
     <div>
-      
+
       <Outlet />
     </div>
   );
@@ -53,7 +55,7 @@ const router = createBrowserRouter([
         path: "Member",
         element: <MemberLayout />,
         children: [
-          
+
           {
             path: "Interns",
             element: <Interns />,
@@ -66,16 +68,27 @@ const router = createBrowserRouter([
             path: "Alumni",
             element: <Alumni />,
           },
-        ]},
-        
-       {
-         path: "ReadMore",
-         element: <ReadMore />
+        ]
+      },
+      {
+        path: "More",
+        element: <CurrentMember />
+      },
+      {
+        path: "Read More",
+        element: <Alumni />
+      },
+      {
+        path: "/readMore/:name",
+        element: <ReadMore />
 
       },
-     
-    
-       
+      {
+        path: "/About/:name",
+        element: <About />
+      },
+
+
       {
         path: "Contact",
         element: <Contact />,

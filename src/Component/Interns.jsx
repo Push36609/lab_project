@@ -1,5 +1,6 @@
 import React from 'react'
 // import styles from './Interns.module.css';
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -54,6 +55,7 @@ const data = [
 
 
 function Interns() {
+  const navigate = useNavigate();
   return (
 
     <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-full h-auto mt-16 pt-8">
