@@ -1,43 +1,32 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
 
-const data = [
-  {
-    name: `Mr. Kapil Dev`,
-    url: "../Mr. Kapil Dev.jpg",
-    about: `PhD Scholar`
-  },
-  {
-    name: `Ms. Anupma Gadhwal`,
-    url: "../Ms. Anupma Gadhwal.jpg",
-    about: `PhD Scholar`
-  },
-  {
-    name: `Mr. Saurabh Kumar`,
-    url: "../Mr. Saurabh Kumar.jpg",
-    about: `PhD Scholar`
-  },
-  {
-    name: `Mrs. Pooja Tiwari`,
-    url: "../Mrs. Pooja Tiwari.jpg",
-    about: `PhD Scholar`
-  },
-  {
-    name: `Mr. Sayantan Das`,
-    url: "../Mr. Sayantan Das.jpg",
-    about: `Research Associate`
-  },
-  {
-    name: `Mr. Anil Kumar`,
-    url: "../Mr. Anil Kumar.jpg",
-    about: `PhD Scholar`
-  }
-
-]
-
 function CurrentMember() {
   const navigate = useNavigate();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("/members.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch members.json");
+        return res.json();
+      })
+      .then((jsonData) => {
+        setData(jsonData.currentMembers);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-full h-auto mt-16 pt-8">
       <h1 className="text-center mb-4 text-green-900 font-bold text-4xl">Current Members</h1>
@@ -53,7 +42,7 @@ function CurrentMember() {
                         max-[280px]:w-[95%] max-[280px]:h-70 max-[280px]:flex max-[280px]:flex-row max-[280px]:justify-around max-[280px]:items-center" key={member.name}>
 
             <div>
-              <img src={member.url} alt={member.name} className="w-52 h-60 object-cover flex flex-wrap align-center ml-5 rounded-[10%] border-2 border-purple-400
+              <img src={`/${member.image}`} alt={member.name} className="w-52 h-60 object-cover flex flex-wrap align-center ml-5 rounded-[10%] border-2 border-purple-400
                                                                max-[1024px]:w-56 max-[1024px]:h-60 max-[1024px]:ml-0
                                                                max-[768px]:w-40 max-[768px]:h-48 
                                                                max-[480px]:w-32 max-[480px]:h-40
@@ -74,14 +63,10 @@ function CurrentMember() {
                          max-[1024px]:text-2xl max-[1024px]:text-center
                          max-[768px]:text-sm
                          max-[480px]:text-[1rem] max-[480px]:text-center
-                         max-[280px]:text-xl max-[280px]:text-center">{member.about}</h2>
+                         max-[280px]:text-xl max-[280px]:text-center">{member.role}</h2>
 
               <button className="bg-pink-300 text-gray-950 font-semibold border-none rounded-md px-2 py-2 cursor-pointer hover:bg-pink-500 hover:text-white"
-                onClick={() =>
-                  navigate(`/readMore/${encodeURIComponent(member.name)}`, {
-                    state: { name: member.name, url: member.url, about: member.about },
-                  })
-                }>Read More</button>
+                 onClick={() => navigate(`/member/current-members/${member.id}`)}>Read More</button>
             </div>
           </div>
         ))}

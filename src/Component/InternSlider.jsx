@@ -51,7 +51,7 @@ function InternSlider() {
                  <div className="p-4 text-center">
                    <h3 className="text-2xl font-semibold mb-2">{d.name}</h3>
                    <p className="text-gray-600">{d.about}</p>
-                    <button onClick={() => navigate("/Member/Current Member")}
+                    <button onClick={() => navigate("/Member/Interns")}
                      className="mt-2.5 bg-purple-300 text-white text-lg px-4 py-1.5 rounded-xl border-none hover:bg-purple-400 hover:scale-105 transition-transform"
                    > More
                    </button>
