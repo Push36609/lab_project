@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 function Alumni() {
@@ -23,12 +24,20 @@ function Alumni() {
 
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-full h-auto mt-16 pt-8">
+    <motion.div 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+      className="bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 w-full h-auto mt-16 pt-8">
       <h1 className="text-center mb-4 text-green-800 font-bold text-5xl"> Alumnis</h1>
 
       <div className="flex flex-wrap justify-evenly">
         {alumniList.map((alumni) => (
-          <div className="m-[2%] w-[45%] min-w-80 bg-gradient-to-r from-purple-200 to-green-200 h-70 rounded-2xl flex flex-wrap flex-col gap-2 justify-evenly shadow-[5px 5px 15px] border-2 hover:shadow-[0px 10px 24px rgba(142, 68, 173, 0.4)] hover:scale-[1.03] hover:border-[#9b59b6]
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="m-[2%] w-[45%] min-w-80 bg-gradient-to-r from-blue-50 via-purple-50 to-cyan-50 h-70 rounded-2xl flex flex-wrap flex-col gap-2 justify-evenly shadow-[5px 5px 15px] border-2 hover:shadow-[0px 10px 24px rgba(142, 68, 173, 0.4)] hover:scale-[1.03] hover:border-[#9b59b6]
                            max-[1024px]:w-[95%] max-[1024px]:h-70 max-[1024px]:flex max-[1024px]:flex-row max-[1024px]:justify-around max-[1024px]:items-center
                            max-[768px]:w-[95%]  max-[768px]:h-60 max-[768px]:flex max-[768px]:flex-row max-[768px]:justify-around max-[768px]:items-center
                            max-[480px]:w-[95%]  max-[480px]:h-50 max-[480px]:flex max-[480px]:flex-row max-[480px]:justify-around max-[480px]:items-center
@@ -65,10 +74,10 @@ function Alumni() {
               >
                 Read More</button>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

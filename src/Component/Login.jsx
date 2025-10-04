@@ -1,9 +1,34 @@
-import React from "react";
+import React , {useState} from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
  function Login() {
+  const [email, setEmail] = useState({"email":"", password:""});
+  const [token, setToken] = useState("");
+
+  const handleSubmit = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setToken(data.token);
+      } else {
+        console.error("Login failed:", data.error);
+      }
+    };
+  
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100">
       {/* Animated Card */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -79,19 +104,19 @@ import { motion } from "framer-motion";
           transition={{ delay: 0.6, duration: 0.6 }}
           className="mt-4 text-center text-sm text-gray-500"
         >
-          <a href="#" className="text-teal-800 hover:underline">
+          <Link to="/ForgotPass" className="text-teal-800 hover:underline">
             Forgot Password?
-          </a>
+          </Link>
           <p className="mt-2">
             Don't have an account?{" "}
-            <a href="#" className="text-teal-800 hover:underline">
+            <Link to="/signup" className="text-teal-800 hover:underline">
               Sign Up
-            </a>
+            </Link>
           </p>
         </motion.div>
       </motion.div>
     </div>
   );
-}
+};
 
 export default Login;

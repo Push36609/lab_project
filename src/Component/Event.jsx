@@ -16,7 +16,7 @@ const events = [
 
 export default function Event() {
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 mt-16 pt-4 h-screen">
+    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 mt-16 pt-4 h-screen">
       <div className="pl-16 h-screen m-auto items-center ml-[10%]">
         <h2 className='text-4xl font-bold m-6 mt-6'>Upcoming Events</h2>
         <ul className="list-none p-0 max-w-[90%] items-center">

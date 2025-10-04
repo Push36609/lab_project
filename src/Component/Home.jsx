@@ -8,10 +8,11 @@ import InternSlider from './InternSlider';
 import ImageSlider from './ImageSlider'; 
 import Footer from './Footer';
  
+ 
 
 function Home() {
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100">
+    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100">
       <Hero />
       <Intro /> 
       <InFo />
@@ -19,6 +20,7 @@ function Home() {
       <AlumniSlider />
       <InternSlider />
       <ImageSlider />
+      
       <Footer />
     </div>
   );

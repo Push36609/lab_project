@@ -1,5 +1,6 @@
 import React, {useEffect , useState}from 'react'
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 
@@ -31,10 +32,18 @@ function Interns() {
 
   return (
 
-    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-full h-auto mt-16 pt-8">
+    <motion.div 
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    className="bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 w-full h-auto mt-16 pt-8">
           <h1 className="text-center mb-4 text-green-900 font-bold text-4xl">Our Interns</h1>
 
-      <div className="flex flex-wrap justify-evenly">
+      <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex flex-wrap justify-evenly">
          {interns.map((intern) => (
           <div className="m-[2%] w-[45%] min-w-80 bg-gradient-to-r from-purple-100 via-blue-100 to-green-100 h-70 rounded-2xl flex flex-col flex-wrap justify-evenly 
                           shadow-lg border-2 border-black
@@ -44,7 +53,11 @@ function Interns() {
                           max-[480px]:w-[95%] max-[480px]:h-50 max-[480px]:flex max-[480px]:flex-row max-[480px]:justify-around max-[480px]:items-center
                           max-[280px]:w-[95%] max-[280px]:h-70 max-[280px]:flex max-[280px]:flex-row max-[280px]:justify-around max-[280px]:items-center" key={interns.id}>
             <div >
-              <img src={`/${intern.image}`} alt={intern.name} className="w-52 h-60 object-cover flex flex-wrap items-center ml-5 rounded-2xl border-2 border-[#9b59b6]
+              <motion.img 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              src={`/${intern.image}`} alt={intern.name} className="w-52 h-60 object-cover flex flex-wrap items-center ml-5 rounded-2xl border-2 border-[#9b59b6]
                                                                  max-[1024px]:w-56 max-[1024px]:h-60 max-[1024px]:ml-0
                                                                  max-[768px]:w-40 max-[768px]:h-48
                                                                  max-[480px]:w-32 max-[480px]:h-40
@@ -70,9 +83,9 @@ function Interns() {
               </div>
             
         ))}
-        </div>
+        </motion.div>
          
-    </div>
+    </motion.div>
   )
 }
 export default Interns;

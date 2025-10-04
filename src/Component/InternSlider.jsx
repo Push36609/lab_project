@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useNavigate, Outlet } from "react-router-dom";
-
+// import data from ".../public/members.json"
 
 
 function InternSlider() {

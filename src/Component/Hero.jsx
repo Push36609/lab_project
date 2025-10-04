@@ -63,7 +63,7 @@ function Hero() {
 
   return (
     <div
-      className="w-full min-h-130 mt-15 bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 flex flex-col items-center justify-center relative"
+      className="w-full min-h-130 mt-15 bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 flex flex-col items-center justify-center relative"
       onMouseEnter={() => clearInterval(ref.current)}
       onMouseLeave={() => (ref.current = setInterval(handleNext, 2000))}
     >

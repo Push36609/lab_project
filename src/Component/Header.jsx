@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link , NavLink} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -9,9 +9,9 @@ const Header = () => {
 
 
   return (
-    <header className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 fixed top-0 left-0 w-full z-50 bg-white shadow">
+    <header className="bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 fixed top-0 left-0 w-full z-50 bg-white shadow">
 
-      <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8 border-b border-black">
+      <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8 shadow-md">
         <div className="flex justify-between h-16 items-center">
           <div className="font-sans font-semibold text-2xl tracking-[0.6px] text-center my-4 
          bg-gradient-to-r from-[#6a11cb] to-[#2575fc] bg-clip-text text-transparent 
@@ -19,7 +19,9 @@ const Header = () => {
 
           {/* Desktop nav */}
           <nav className=" hidden lg:flex space-x-8 text-xl leading-7 items-center">
-            <Link to="/Home" className="text-[#551A8B] no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Home</Link>
+             <NavLink to="/Home" className={({ isActive }) =>`no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                 isActive ? "text-cyan-600  " : "text-[#551A8B]"
+               }`}> Home</NavLink>
 
             {/* Members dropdown */}
             <div className="relative h-150px ">
@@ -40,7 +42,7 @@ const Header = () => {
                 </svg>
               </button>
               {isMembersOpen && (
-                <ul className="absolute top-full mt-2 bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-40 rounded-2xl text-black" onMouseLeave={() => setIsMembersOpen(!isMembersOpen)} >
+                <ul className="absolute top-full mt-2 bg-gradient-to-r from-blue-50 via-purple-50 to-cyan-50 w-40 rounded-2xl text-black" onMouseLeave={() => setIsMembersOpen(!isMembersOpen)} >
                   <li onClick={() => setIsMembersOpen(!isMembersOpen)}><Link to="/Member/Current Member" className="block py-2 px-2 text-[#551A8B] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Current Members</Link></li>
                   <li onClick={() => setIsMembersOpen(!isMembersOpen)}><Link to="/Member/Alumni" className="block py-2 px-2 text-[#551A8B] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Alumni</Link></li>
                   <li onClick={() => setIsMembersOpen(!isMembersOpen)}><Link to="/Member/Interns" className="block py-2 px-2 text-[#551A8B] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Interns</Link></li>
@@ -48,10 +50,18 @@ const Header = () => {
               )}
             </div>
 
-            <Link to="/Research" className="text-xl text-[#551A8B] no-underline hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Research</Link>
-            <Link to="/Event" className="text-xl text-[#551A8B] no-underline hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Event</Link>
-            <Link to="/Project" className="text-xl text-[#551A8B] no-underline hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Project</Link>
-            <Link to="/contact" className="text-xl text-[#551A8B] no-underline hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">Contact Us</Link>
+            <NavLink to="/Research" className={({ isActive }) =>`no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                 isActive ? "text-cyan-600  " : "text-[#551A8B]"
+               }`}> Research</NavLink>
+            <NavLink to="/Event" className={({ isActive }) =>`no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                 isActive ? "text-cyan-600  " : "text-[#551A8B]"
+               }`}> Event</NavLink>
+            <NavLink to="/Project" className={({ isActive }) =>`no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                 isActive ? "text-cyan-600  " : "text-[#551A8B]"
+               }`}> Project</NavLink>
+            <NavLink to="/contact" className={({ isActive }) =>`no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                 isActive ? "text-cyan-600  " : "text-[#551A8B]"
+               }`}> Contact Us</NavLink>
 
           <div>
             

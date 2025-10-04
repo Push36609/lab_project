@@ -1,27 +1,42 @@
 import React from 'react'
+import { motion } from "framer-motion";
 
 const Intro = () => {
   return (
-     <div className="  w-full h-auto mt-2 pt-2">
+     <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }} 
+     className="  w-full h-auto mt-2 pt-2">
           
 
-      <div className="flex flex-wrap justify-evenly">
+      <motion.div className="flex flex-wrap justify-evenly">
         
-          <div className="m-[2%] w-[95%] min-w-70 bg-gradient-to-r from-purple-100 via-blue-100 to-green-100 h-70 rounded-2xl flex flex-col flex-wrap justify-evenly 
+          <motion.div  
+           initial={{ opacity: 0, y: 50 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="m-[2%] w-[95%] min-w-70 bg-gradient-to-r from-purple-50 via-blue-50 to-sky-100 h-70 rounded-2xl flex flex-col flex-wrap justify-evenly 
                           shadow-lg border-2 border-black
                           hover:scale-[(1.03)] hover:shadow-[0px_10px_24px_rgba(142,68,173,0.4)] hover:border-[#9b59b6]
                           max-[1024px]:w-[95%] max-[1024px]:h-auto max-[1024px]:flex max-[1024px]:flex-row max-[1024px]:justify-around max-[1024px]:items-center
                           max-[768px]:w-[95%] max-[768px]:h-auto max-[768px]:flex max-[768px]:flex-row max-[768px]:justify-around max-[768px]:items-center
                           max-[480px]:w-[95%] max-[480px]:h-auto max-[480px]:flex max-[480px]:flex-row max-[480px]:justify-around max-[480px]:items-center
                           max-[280px]:w-[95%] max-[280px]:h-90 max-[280px]:flex max-[280px]:flex-row max-[280px]:justify-around max-[280px]:items-center"  >
-            <div >
-              <img src="Dr.Saurabh kumar.png" alt="Dr.Saurabh kumar.png" className="w-52 h-60 object-cover flex flex-wrap items-center ml-5 my-2 rounded-2xl  
+            <motion.div  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}>
+              <motion.img 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              src="Dr.Saurabh kumar.png" alt="Dr.Saurabh kumar.png" className="w-52 h-60 object-cover flex flex-wrap items-center ml-5 my-2 rounded-2xl  
                                                                  max-[1024px]:w-56 max-[1024px]:h-60 max-[1024px]:ml-0
                                                                  max-[768px]:w-40 max-[768px]:h-48
                                                                  max-[480px]:w-32 max-[480px]:h-40 
                                                                  max-[280px]:w-24 max-[280px]:h-32
                                                                  "/>
-            </div>
+            </motion.div>
 
               <div className='ml-5 w-[70%]' >
                 <h1 className="text-4xl text-black w-[70%]
@@ -44,9 +59,9 @@ const Intro = () => {
                                 M.Tech. (Computational & Systems Biology), Jawaharlal Nehru University, New Delhi, 2014.
                                 B.Tech. (Computer Science and Engineering), Lovely Professional University, Punjab, 2012.</p>
                 </div>
-              </div>
+              </motion.div>
      
-        </div>
+        </motion.div>
          <div className='mx-2'> 
     <p className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-black rounded-2xl py-5 px-6 my-8 mx-auto max-w-300 font-sans text-base leading-6 text-gray-900 shadow-[0px 4px 12px rgba(142, 68, 173, 0.2)] transition-transform duration-300 ease-in-out
                     hover:scale-105 hover:shadow-lg hover:border-blue-300">
@@ -60,7 +75,7 @@ const Intro = () => {
         for solving real-world biological challenges, fostering innovation in computational biology, neuroscience, and AI-driven diagnostics.
       </p>
       </div>
-    </div>
+    </motion.div>
     
   )
 }

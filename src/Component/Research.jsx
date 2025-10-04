@@ -1,13 +1,22 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Research = () => {
   return (
-    <div className="p-8 bg-gradient-to-r from-blue-100 via-purple-100 to-cyan-100 min-h-screen">
-      <h1 className="pt-20 text-3xl md:text-5xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 text-center">
+    <div className="p-8 bg-gradient-to-r from-blue-100 via-purple-100 to-sky-100 min-h-screen">
+      <motion.h1 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      className="pt-20 text-3xl md:text-5xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 text-center">
         Research
-      </h1>
+      </motion.h1>
 
-      <div className="space-y-8 text-lg md:text-xl leading-8 text-gray-900 max-w-5xl mx-auto">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      className="space-y-8 text-lg md:text-xl leading-8 text-gray-900 max-w-5xl mx-auto">
         <p className="bg-white/90 p-6 rounded-xl shadow-md">
           The main areas of interest of Prof. Singh’s lab are understanding the
           mechanisms of <span className="text-purple-700 font-semibold">carcinogenesis</span>{" "}
@@ -55,7 +64,7 @@ const Research = () => {
           explanations or cues that can be extrapolated to derive an understanding
           of the cancer development and therapeutics.
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

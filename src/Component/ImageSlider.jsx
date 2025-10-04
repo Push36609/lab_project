@@ -1,7 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import styles from './Hero.module.css';
-import data from './data.json';
-
+import { motion } from "framer-motion";
+ 
+const data = [
+  {
+    "url": "group photo.png"
+  },
+  {
+    "url": "1.jpeg"
+  },
+  {
+    "url": "2.jpeg"
+  },
+  {
+    "url": "3.jpeg"
+  }
+];
 
 function ImageSlider() {
   const [next, setNext] = useState(0);
@@ -33,12 +46,19 @@ function ImageSlider() {
   }, [])
 
   return (
-    <div className="w-full bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 flex flex-col items-center z-1 pt-5" onMouseEnter={() => clearInterval(ref.current)}
+    <div className="w-full bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 flex flex-col items-center z-1 pt-5" onMouseEnter={() => clearInterval(ref.current)}
       onMouseLeave={() => ref.current = setInterval(handleNext, 2000)}>
 
       <div className="relative inline-block w-full z-1 ">
         <button className="absolute top-1/2 transform -translate-y-1/2 text-[clamp(1.2rem,2vw,2.5rem)] cursor-pointer font-bold text-purple-400 border-none rounded-full z-2 flex justify-center left-8 hover:bg-green-300" onClick={handlePre}>{"<"}</button>
-        <img src={data[next].url} alt="" className="w-[95%] justify-center h-auto mx-auto rounded-[1.25rem] block m-auto shadow-[5px_5px_15px]"/>
+        <motion.img
+          src={data[next].url}
+          alt=""
+          className="w-[95%] justify-center h-auto mx-auto rounded-[1.25rem] block m-auto shadow-[5px_5px_15px]"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
         <button className="absolute top-1/2 transform -translate-y-1/2 text-[clamp(1.2rem,2vw,2.5rem)] cursor-pointer font-bold text-purple-400 border-none rounded-full z-2 flex justify-center right-8 hover:bg-green-300" onClick={handleNext}>{">"}</button>
       </div>
 

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="w-full box-border bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 text-purple-700 mt-5 pl-4 pr-8 font-sans border-t-2  [border-image: linear-gradient(to right, #b99ee8, #a2d5b7);] ">
+    <footer className="w-full box-border bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 text-purple-700 mt-5 pl-4 pr-8 font-sans border-t-2  [border-image: linear-gradient(to right, #b99ee8, #a2d5b7);] ">
       <div className="flex justify-between flex-wrap max-w-300 mx-auto gap-12">
 
         <div className="flex-[1_1_200px] mb-4 mt-4">

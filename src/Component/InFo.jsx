@@ -1,5 +1,6 @@
 import React from "react";
 // import styles from "./InFo.module.css";
+import { motion } from "framer-motion";
 
 function Info() {
   const sections = [
@@ -10,7 +11,11 @@ function Info() {
   ];
 
   return (
-    <div className="w-[98%] h-auto flex flex-col gap-8">
+    <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+     className="w-[98%] h-auto flex flex-col gap-8">
       {sections.map((section, index) => (
         <div className="w-full flex flex-col gap-4" key={index}>
           <h1 className="w-[70%] ml-8 text-3xl font-sans text-green-600 shadow-[2px 2px 4px rgba(57, 225, 65, 0.7)]">{section.title}</h1>
@@ -26,7 +31,7 @@ function Info() {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 

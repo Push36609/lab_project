@@ -10,9 +10,10 @@ import Interns from "./Component/Interns";
 import CurrentMember from "./Component/CurrentMember";
 import Alumni from "./Component/Alumni";
 import Login from "./Component/Login";
-import About from "./Component/About";
 import CurrentmemberSlider from "./Component/CurrentmemberSlider";
 import MemberDetail from "./Component/MemberDetail";
+import Signup from "./Component/Signup";
+import ForgotPass from "./Component/ForgotPass";
 
 
 
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
     children: [
       {path: "Home", element: <Home />,},
       {path: "Login", element: <Login />,},
+      { path: "Signup", element: <Signup />, },
+      { path: "ForgotPass", element: <ForgotPass />, },
       {
         path: "Member",
         element: <MemberLayout />,
@@ -70,6 +73,7 @@ const router = createBrowserRouter([
       { path: "Research", element: <Research />, },
       { path: "project", element: < Project />, },
       { path: "Event", element: <Event />, },
+      
 
       { index: true, element: <Home />, },
     ],

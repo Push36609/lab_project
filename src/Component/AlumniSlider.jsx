@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useNavigate, Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -63,7 +64,11 @@ const data = [
 function AlumniSlider() {
   const navigate = useNavigate();
   return (
-    <div className="max-w-[90%] h-150 mx-auto py-10 px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="max-w-[90%] h-150 mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold text-center mb-6">Alumni</h1>
       <Swiper
   modules={[Navigation, Pagination, Autoplay]}
@@ -90,7 +95,11 @@ function AlumniSlider() {
 >
   {data.map((d, index) => (
     <SwiperSlide key={index}>
-      <div className="bg-blue-100 h-110 w-90 shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 max-[380px]:w-75">
+      <motion.div 
+       initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-blue-100 h-110 w-90 shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 max-[380px]:w-75">
         <div className="flex flex-row items-center justify-center h-62 bg-gradient-to-br from-white to-green-50">
           <img
             src={d.url}
@@ -111,12 +120,12 @@ function AlumniSlider() {
             <Outlet />
           </div>
         </div>
-      </div>
+      </motion.div>
     </SwiperSlide>
   ))}
 </Swiper>
 
-    </div>
+    </motion.div>
   );
 }
 

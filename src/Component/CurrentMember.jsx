@@ -28,12 +28,12 @@ function CurrentMember() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-cyan-100 w-full h-auto mt-16 pt-8">
+    <div className="bg-gradient-to-r from-blue-100 via-purple-50 to-sky-100 w-full h-auto mt-16 pt-8">
       <h1 className="text-center mb-4 text-green-900 font-bold text-4xl">Current Members</h1>
 
       <div className="flex flex-wrap justify-evenly">
         {data.map((member) => (
-          <div className="m-[2%] w-[45%] min-w-80 bg-gradient-to-r from-purple-200 to-green-200 
+          <div className="m-[2%] w-[45%] min-w-80 bg-gradient-to-r from-purple-100 via-blue-50 to-green-100
                         h-70 rounded-2xl flex flex-wrap flex-col justify-evenly shadow-[5px 5px 15px] 
                         border-2 border-black hover:scale-[1.03] hover:shadow-[0px 10px 24px rgba(142, 68, 173, 0.4)] hover:border-[#9b59b6]
                         max-[1024px]:w-[95%] max-[1024px]:h-70 max-[1024px]:flex max-[1024px]:flex-row max-[1024px]:justify-around max-[1024px]:items-center

@@ -1,9 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Project = () => {
   return (
-    <div className="mt-16 pt-10 bg-gradient-to-r from-blue-100 via-purple-100 to-cyan-100 min-h-screen">
-      <div className="max-w-6xl mx-auto px-6 pb-10">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    className="mt-16 pt-10 bg-gradient-to-r from-blue-100 via-purple-100 to-sky-100 min-h-screen">
+      <motion.div 
+         initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="max-w-6xl mx-auto px-6 pb-10">
         {/* Title */}
         <h1 className="text-2xl md:text-4xl font-bold mb-6  bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent text-center ">
           PROJECT 1
@@ -25,7 +34,11 @@ const Project = () => {
 
 
         {/* project2 */}
-        <div className="max-w-6xl mx-auto px-6 pb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="max-w-6xl mx-auto px-6 pb-10">
           {/* Title */}
           <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent align-top-left"><br />
             PROJECT 2
@@ -46,7 +59,12 @@ const Project = () => {
 
 
           {/* project3 */}
-          <div className="max-w-6xl mx-auto px-6 pb-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-6xl mx-auto px-6 pb-10"
+          >
             {/* Title */}
             <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent align-top-left"><br />
               PROJECT 3
@@ -69,7 +87,12 @@ const Project = () => {
 
 
             {/* project4*/}
-            <div className="max-w-6xl mx-auto px-6 pb-10">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="max-w-6xl mx-auto px-6 pb-10"
+            >
               {/* Title */}
               <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent align-top-left"><br />
                 PROJECT 4
@@ -94,7 +117,12 @@ const Project = () => {
               </p>
 
               {/* project5 */}
-              <div className="max-w-6xl mx-auto px-6 pb-10">
+              <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="max-w-6xl mx-auto px-6 pb-10"
+              >
                 {/* Title */}
                 <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent align-top-left"><br />
                   PROJECT 5
@@ -117,7 +145,11 @@ const Project = () => {
                   <br />
                 </p>
                 {/* project6*/}
-                <div className="max-w-6xl mx-auto px-6 pb-10">
+                <motion.div 
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                className="max-w-6xl mx-auto px-6 pb-10">
                   {/* Title */}
                   <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent align-top-left"><br />
                     PROJECT 6
@@ -136,7 +168,12 @@ const Project = () => {
                     <span className="text-indigo-600 font-semibold"> Date :</span> 2024 July <br />
                   </p>
                   {/* project7 */}
-                  <div className="max-w-6xl mx-auto px-6 pb-10">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="max-w-6xl mx-auto px-6 pb-10"
+                  >
                     {/* Title */}
                     <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-700 to-cyan-500 bg-clip-text text-transparent align-top-left"><br />
                       PROJECT 7
@@ -159,14 +196,14 @@ const Project = () => {
 
 
 
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
