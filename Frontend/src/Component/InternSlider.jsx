@@ -96,7 +96,7 @@ const data = [
   },
   {
     name: `Mr. Ankush Rawat`,
-    url: `/Mr. Ankush Rawat.jpg`,
+    url: `/Mr. Ankush Rawat.png`,
     about: `BCA(AI) from LLDIMS`
   },
   {
