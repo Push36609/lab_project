@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
- 
+
 const data = [
   {
-    "url": "group photo.png"
+    "url": "/group photo.png"
   },
   {
-    "url": "1.jpeg"
+    "url": "/1.png"
   },
   {
-    "url": "2.jpeg"
+    "url": "/2.png"
   },
   {
-    "url": "3.jpeg"
+    "url": "/3.png"
   }
 ];
 
@@ -54,7 +54,7 @@ function ImageSlider() {
         <motion.img
           src={data[next].url}
           alt=""
-          className="w-[95%] justify-center h-auto mx-auto rounded-[1.25rem] block m-auto shadow-[5px_5px_15px]"
+          className="w-[90%] justify-center h-auto mx-auto rounded-[1.25rem] block m-auto shadow-[5px_5px_15px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -67,8 +67,7 @@ function ImageSlider() {
           {data.map((_, i) => (
             <div
               key={i}
-              className={`flex justify-center transition-all-[0.2s ease-in-out] ${
-                         next === i ? 'bg-purple-500 scale-125' : 'bg-gray-300'}`}
+              className={`flex justify-center transition-all-[0.2s ease-in-out] ${next === i ? 'bg-purple-500 scale-125' : 'bg-gray-300'}`}
             ></div>
           ))}
         </div>
